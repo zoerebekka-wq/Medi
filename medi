@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicosmetic Aesthetic Clinic</title>
+  <style>
+    :root {
+      --topbar: #c3ab86;
+      --hero: #b2a79b;
+      --light: #f6f6f6;
+      --text: #3f3a36;
+      --muted: #a9926d;
+      --white: #ffffff;
+      --cta: #d1b07a;
+      --cta-hover: #c5a168;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--light);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      height: 55px;
+      background: var(--topbar);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 28px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .topbar-text {
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 220px);
+    }
+
+    .topbar-icons {
+      position: absolute;
+      right: 26px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .topbar-icons svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      display: block;
+    }
+
+    .header {
+      background: var(--light);
+      padding-top: 26px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 38px;
+    }
+
+    .logo-wrap img {
+      width: 350px;
+      max-width: 80vw;
+      height: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 84px;
+      padding: 24px 30px 34px;
+      font-size: 17px;
+      color: var(--text);
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .nav a.active {
+      color: var(--muted);
+    }
+
+    .nav .caret {
+      font-size: 13px;
+      margin-left: 4px;
+      position: relative;
+      top: -1px;
+    }
+
+    .hero {
+      background: var(--hero);
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      min-height: 765px;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: 100%;
+      min-height: 765px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-section {
+      background: var(--light);
+      padding: 90px 20px 80px;
+      text-align: center;
+    }
+
+    .intro-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .intro-kicker {
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+
+    .intro-title {
+      margin: 0 0 24px;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 1.12;
+      white-space: pre-line;
+    }
+
+    .intro-text {
+      margin: 0 auto;
+      max-width: 760px;
+      color: #6b645d;
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1400px) {
+      .nav {
+        gap: 54px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        min-height: auto;
+      }
+
+      .intro-title {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .topbar {
+        height: auto;
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .topbar-text {
+        max-width: 100%;
+        white-space: normal;
+      }
+
+      .topbar-icons {
+        position: static;
+        transform: none;
+      }
+
+      .nav {
+        gap: 28px 36px;
+        font-size: 15px;
+      }
+
+      .intro-section {
+        padding: 70px 20px 64px;
+      }
+
+      .intro-title {
+        font-size: 42px;
+      }
+
+      .intro-text {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .header {
+        padding-top: 18px;
+      }
+
+      .logo-wrap {
+        margin-bottom: 24px;
+      }
+
+      .logo-wrap img {
+        width: 250px;
+      }
+
+      .nav {
+        gap: 18px 22px;
+        padding: 16px 16px 22px;
+        font-size: 14px;
+      }
+
+      .hero {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .intro-section {
+        padding: 56px 18px 52px;
+      }
+
+      .intro-kicker {
+        font-size: 14px;
+      }
+
+      .intro-title {
+        font-size: 32px;
+      }
+
+      .intro-text {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-text">Τηλ. Κέντρο Αθήνας: +30 21 1234 9504 | Τηλ. Κέντρο Θεσσαλονίκης: +30 231 132 2003 | info@medicosmetic.gr</div>
+    <div class="topbar-icons" aria-label="Social media">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.2V10H8v3h2.7v8h2.8z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.5 1.7a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2z"/></svg>
+      </a>
+      <a href="#" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.8 3c.3 1.7 1.3 3.1 2.9 4 .9.5 1.8.8 2.8.8v3.1c-1.5 0-3-.4-4.3-1.1v5.5a5.3 5.3 0 1 1-5.3-5.3c.3 0 .7 0 1 .1v3.2a2.5 2.5 0 1 0 1.8 2.4V3h3.1z"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.9 4.7 12 4.7 12 4.7s-5.9 0-7.6.5a2.9 2.9 0 0 0-2 2C2 8.9 2 12 2 12s0 3.1.4 4.8a2.9 2.9 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.9 2.9 0 0 0 2-2c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo-wrap">
+      <img src="https://images.squarespace-cdn.com/content/v1/69d4f8c7f164135bc20bd3ea/7ae2635a-665b-4c9b-ad30-55d6ca8facf9/Screenshot+2026-04-07+at+3.27.54%E2%80%AFPM+-+Edited.png?format=2500w" alt="Medicosmetic Aesthetic Clinic logo" />
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="active">ΑΡΧΙΚΗ</a>
+      <a href="#">ΠΡΟΣΩΠΟ <span class="caret">˅</span></a>
+      <a href="#">ΣΩΜΑ <span class="caret">˅</span></a>
+      <a href="#">ΔΙΑΓΝΩΣΤΙΚΕΣ ΑΝΑΛΥΣΕΙΣ <span class="caret">˅</span></a>
+      <a href="#">BLOG</a>
+      <a href="#">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+      <a href="#booking">ΡΑΝΤΕΒΟΥ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-image" src="https://images.squarespace-cdn.com/content/v1/69d4f8c7f164135bc20bd3ea/cbfed525-824f-4826-80f3-badeb95544ab/Screenshot+2026-04-07+at+3.28.07%E2%80%AFPM.png?format=750w" alt="Medicosmetic hero visual" />
+    </div>
+  </section>
+
+  <section class="intro-section">
+    <div class="intro-wrap">
+      <p class="intro-kicker">MEDICOSMETIC AESTHETIC CLINIC</p>
+      <h2 class="intro-title">Εξειδικευμένα
+Ιατρεία Κοσμετολογίας</h2>
+      <p class="intro-text">Στα Medi Cosmetic θα βρείτε μία μεγάλη γκάμα υπηρεσιών προσώπου και σώματος για άντρες και γυναίκες, με έμφαση στην αισθητική αρμονία, την εξειδικευμένη φροντίδα και την εξατομικευμένη εμπειρία.</p>
+    </div>
+  </section>
+  
+  <!-- Booking Section -->
+  <section id="booking" style="padding:110px 20px 120px; background:linear-gradient(180deg, #f8f6f2 0%, #f2eee8 100%); text-align:center;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="margin:0 auto 42px; max-width:760px;">
+        <div style="display:inline-block; padding:10px 18px; border:1px solid rgba(195,171,134,0.45); border-radius:999px; color:#a9926d; font-size:13px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; background:rgba(255,255,255,0.65); margin-bottom:22px;">Booking Experience</div>
+        <h2 style="font-family: Georgia, serif; font-size:56px; line-height:1.08; font-weight:400; color:#3f3a36; margin:0 0 18px;">Κλείστε το ραντεβού σας</h2>
+        <p style="max-width:720px; margin:0 auto; color:#6b645d; font-size:21px; line-height:1.75;">Επιλέξτε ημέρα και ώρα μέσα από ένα άμεσο περιβάλλον κράτησης.</p>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.78); border:1px solid rgba(195,171,134,0.28); border-radius:34px; padding:22px; box-shadow:0 24px 70px rgba(63,58,54,0.10); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);">
+        <div style="background:#ffffff; border-radius:24px; overflow:hidden; box-shadow: inset 0 0 0 1px rgba(195,171,134,0.12);">
+          <iframe src="https://calendly.com/zoe-softwireagency/30min?month=2026-04" width="100%" height="760" frameborder="0" style="display:block;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
